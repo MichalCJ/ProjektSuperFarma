@@ -15,6 +15,7 @@ public class Player {
     public List<Farm> myFarms = new ArrayList<>();
     public List<Animals> ownedAnimals = new ArrayList<>();
 
+    public Integer week = 7;
 
     public Player() {
         this.money = 2137.00;
