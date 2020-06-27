@@ -1,7 +1,7 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Scanner;
-
 public class Main {
 
     public static int menu() {
@@ -24,7 +24,7 @@ public class Main {
         return scanMenu.nextInt();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner number = new Scanner(System.in);
 
@@ -39,6 +39,7 @@ public class Main {
                 case 1:
                     System.out.println(" This are available farms ");
                     System.out.println(" This is your money" + player.money);
+
                     break;
                 case 2:
                     System.out.println(" This is your money" + player.money);
@@ -58,7 +59,7 @@ public class Main {
                 case 7:
                     System.out.println(" You decided to plant plants, you need to choose which one : ");
 
-                    int plantPlants = number.nextInt();
+//                    int plantPlants = number.nextInt();
 //                   switch (plantPlants){
 //                        case 1:
 //                            break;
@@ -91,7 +92,9 @@ public class Main {
                     break;
 
             }
-
+            System.out.println("Now you need press enter to continue");
+            System.in.read();
+            choice = menu();
 
         }
 
