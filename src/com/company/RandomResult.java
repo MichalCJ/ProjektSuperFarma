@@ -4,7 +4,17 @@ import java.util.Random;
 
 public interface RandomResult {
 
-    static Integer randomResult(Integer[] array) {
+    static Integer randomResultInteger(Integer[] array) {
+        int rand = new Random().nextInt(array.length);
+        return array[rand];
+    }
+
+    static Double randomResultDouble(Double[] array) {
+        int rand = new Random().nextInt(array.length);
+        return array[rand];
+    }
+
+    static String randomResultString(String[] array) {
         int rand = new Random().nextInt(array.length);
         return array[rand];
     }
