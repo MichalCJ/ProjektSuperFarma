@@ -29,7 +29,7 @@ public class Main {
         Scanner number = new Scanner(System.in);
 
         Player player = new Player();
-
+        player.setMyFarms();
         System.out.println("Welcome ! Let's star new game.");
 
 
@@ -39,6 +39,9 @@ public class Main {
                 case 1:
                     System.out.println(" This are available farms ");
                     System.out.println(" This is your money" + player.money);
+                    System.out.println(player.myFarms);
+                    System.out.println(" Now you need to choose between this three farms ");
+
 
                     break;
                 case 2:
