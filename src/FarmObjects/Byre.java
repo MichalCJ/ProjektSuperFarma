@@ -9,6 +9,6 @@ public class Byre extends Buildings {
 
     @Override
     public String toString() {
-        return "name" + name + "price" + price;
+        return "name : " + name + "price : " + price;
     }
 }

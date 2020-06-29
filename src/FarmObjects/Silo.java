@@ -8,7 +8,7 @@ public class Silo extends Buildings {
 
     @Override
     public String toString() {
-        return "name" + name + "price" + price;
+        return "name : " + name + "price : " + price;
     }
 
 }

@@ -20,4 +20,11 @@ public class Farm implements RandomResult {
       this.name = RandomResult.randomResultString(farmNames);
       this.capacity = RandomResult.randomResultInteger(place);
    }
+
+   @Override
+   public String toString() {
+      return "Price farm : " + this.priceFarm + "name : " + "capacity : " + this.capacity;
+   }
+
+
 }
