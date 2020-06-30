@@ -9,7 +9,7 @@ public class Farm implements RandomResult {
 
    public Integer priceFarm;
    public String name;
-   public Integer[] place = new Integer[]{3, 4, 5, 6, 7, 8};
+   public Integer[] place = new Integer[]{25, 30, 35, 40, 45, 50};
    public String[] farmNames = new String[]{"Fox Run", "Coyote Crossing", "Dingo Point", " Wild Turkey Ranch", "Blueberry Hill", "Whispering Pines"};
    public Integer randomPriceForFarm = ThreadLocalRandom.current().nextInt(250, 1000 + 1);
    public Integer capacity;

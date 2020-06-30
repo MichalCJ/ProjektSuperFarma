@@ -30,6 +30,7 @@ public class Main {
 
         Player player = new Player();
         player.setMyFarms();
+        player.setFarmBought();
         System.out.println("Welcome ! Let's star new game.");
 
 
@@ -41,7 +42,21 @@ public class Main {
                     System.out.println(" This is your money" + player.money);
                     System.out.println(player.myFarms);
                     System.out.println(" Now you need to choose between this three farms ");
-
+                    int farm = number.nextInt();
+                    switch (farm) {
+                        case 1:
+                            player.buyFarm(0);
+                            break;
+                        case 2:
+                            player.buyFarm(1);
+                            break;
+                        case 3:
+                            player.buyFarm(2);
+                            break;
+                        default:
+                            System.out.println("Choose number between 1-3");
+                            break;
+                    }
 
                     break;
                 case 2:

@@ -16,6 +16,8 @@ public class Player {
     public List<Animals> ownedAnimals = new ArrayList<>();
     public Farm farm;
     public Integer week = 7;
+    public List<Farm> farmBought;
+
 
     public Player() {
         this.money = 2137.00;
@@ -30,5 +32,24 @@ public class Player {
         for (int i = 0; i < 3; i++) {
             myFarms.add(new Farm());
         }
+    }
+
+    public void buyFarm(int i) {
+        if (money >= myFarms.get(i).priceFarm) {
+
+            this.farmBought.add(myFarms.get(i));
+            this.money = money - (myFarms.get(i).priceFarm);
+            myFarms.remove(i);
+            myFarms.add(i, new Farm());
+            System.out.println("you bought a farm " + this.farmBought);
+        } else {
+            System.out.println("You don't have money for that try something else");
+        }
+        System.out.println("now you have: " + this.money);
+    }
+
+    public void setFarmBought() {
+        this.farmBought = new ArrayList<>();
+
     }
 }
