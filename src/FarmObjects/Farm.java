@@ -23,7 +23,7 @@ public class Farm implements RandomResult {
 
    @Override
    public String toString() {
-      return " name : " + this.name + " Price farm : " + this.priceFarm + " capacity : " + this.capacity;
+      return " | name : " + this.name + " , Price farm : " + this.priceFarm + " , capacity : " + this.capacity + "|";
    }
 
 

@@ -19,6 +19,7 @@ public class Main {
         System.out.println("11.Check how much plants do you have .");
         System.out.println("12.Check how much animals do you have .");
         System.out.println("13. End this week.");
+        System.out.println("14. Check your farm.");
         Scanner scanMenu = new Scanner(System.in);
 
         return scanMenu.nextInt();
@@ -107,6 +108,9 @@ public class Main {
 
                 case 13:
                     System.out.println(" 13");
+                    break;
+                case 14:
+                    System.out.println("This is your farm" + player.farmBought);
                     break;
 
             }

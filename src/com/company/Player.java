@@ -39,7 +39,6 @@ public class Player {
 
             this.farmBought.add(myFarms.get(i));
             this.money = money - (myFarms.get(i).priceFarm);
-            myFarms.remove(i);
             myFarms.add(i, new Farm());
             System.out.println("you bought a farm " + this.farmBought);
         } else {
