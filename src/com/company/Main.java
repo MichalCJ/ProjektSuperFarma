@@ -1,5 +1,8 @@
 package com.company;
 
+import FarmObjects.*;
+import ThingsToSell.Animals;
+
 import java.io.IOException;
 import java.util.Scanner;
 public class Main {
@@ -32,6 +35,17 @@ public class Main {
         Player player = new Player();
         player.setMyFarms();
         player.setFarmBought();
+
+        Buildings silo = new Silo("Silos", 50.00, 100.00);
+        Buildings byre = new Byre("Byre", 40.00, 20.0);
+        Buildings coop = new ChickenCoop("Chicken copp", 30.00, 15.0);
+        Buildings stable = new Stable("Stable", 45.00, 20.0);
+
+        Animals cow = new Animals("Cow", 5.0, 3.0, 2.0, 6.0, 6.9, "grass");
+        Animals horse = new Animals("Horse", 6.0, 3.0, 2.0, 5.0, 6.9, "Hay");
+        Animals sheep = new Animals("Sheep", 3.0, 2.0, 1.5, 4.0, 6.9, "grass");
+        Animals chicken = new Animals("Chicken", 1.0, 1.5, 1.0, 2.0, 6.9, "grain");
+
         System.out.println("Welcome ! Let's star new game.");
 
 
@@ -65,14 +79,29 @@ public class Main {
                     break;
                 case 3:
                     System.out.println(" This is your  money" + player.money);
+
+
                     break;
                 case 4:
                     System.out.println(" This is your   money" + player.money);
                     break;
                 case 5:
                     System.out.println("  This is your money" + player.money);
+                    System.out.print("Here you can buy new animals to your farm");
+
+//                   int browseAnimals = number.nextInt();
+//                   switch (browseAnimals){
+//                        case 1:
+//                            break;
+//                        case 2:
+//                            break;
+//                        case 3:
+//                            break;
+//                    }
                     break;
                 case 6:
+
+
                     System.out.println("   This is your money" + player.money);
                     break;
                 case 7:

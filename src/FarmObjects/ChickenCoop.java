@@ -1,9 +1,7 @@
 package FarmObjects;
 
-public class Silo extends Buildings {
-
-    public Silo(String name, double price, double capacity) {
-
+public class ChickenCoop extends Buildings {
+    public ChickenCoop(String name, double price, double capacity) {
         super(name, price, capacity);
     }
 

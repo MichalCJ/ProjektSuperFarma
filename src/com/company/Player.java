@@ -1,5 +1,6 @@
 package com.company;
 
+import FarmObjects.Buildings;
 import FarmObjects.Farm;
 import ThingsToSell.Animals;
 import ThingsToSell.Plants;
@@ -11,12 +12,15 @@ public class Player {
 
 
     public Double money;
-    public List<Plants> ownedPlants = new ArrayList<>();
+    public List<Plants> ownedPlants;
+    public List<Plants> farmPlants = new ArrayList<>();
     public List<Farm> myFarms = new ArrayList<>();
-    public List<Animals> ownedAnimals = new ArrayList<>();
+    public List<Animals> ownedAnimals;
+    public List<Animals> farmAnimals = new ArrayList<>();
     public Farm farm;
     public Integer week = 7;
     public List<Farm> farmBought;
+    public List<Buildings> farmBuildings = new ArrayList<>();
 
 
     public Player() {
@@ -25,6 +29,7 @@ public class Player {
     }
 
     public void setMyFarms() {
+
         this.makeRandomFarms();
     }
 
@@ -51,4 +56,6 @@ public class Player {
         this.farmBought = new ArrayList<>();
 
     }
+
+
 }

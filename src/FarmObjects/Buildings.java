@@ -11,7 +11,8 @@ public abstract class Buildings {
         this.capacity = capacity;
 
     }
-@Override
+
+    @Override
     public String toString() {
         return " name: " + this.name + " price: " + this.price;
     }
