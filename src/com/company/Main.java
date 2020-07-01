@@ -11,8 +11,8 @@ public class Main {
         System.out.println("This is the main section of the game. Choose a number for a next option.");
         System.out.println("1. Buy a farm.");
         System.out.println("2. Buy a field(Arable land).");
-        System.out.println("3. Buy a Silo.");
-        System.out.println("4. Buy a Byre.");
+        System.out.println("3. Buy a building.");
+        System.out.println("4. Check your farm.");
         System.out.println("5. Buy animals.");
         System.out.println("6. Buy plants.");
         System.out.println("7. Plant plants.");
@@ -22,7 +22,6 @@ public class Main {
         System.out.println("11.Check how much plants do you have .");
         System.out.println("12.Check how much animals do you have .");
         System.out.println("13. End this week.");
-        System.out.println("14. Check your farm.");
         Scanner scanMenu = new Scanner(System.in);
 
         return scanMenu.nextInt();
@@ -76,6 +75,31 @@ public class Main {
                     break;
                 case 2:
                     System.out.println(" This is your money" + player.money);
+                    System.out.print("Here you can buy Buildings");
+                    System.out.println("1. Buy a Byre.");
+                    System.out.println("2. Buy a Silo.");
+                    System.out.println("3. Buy a Stable.");
+                    System.out.println("4. buy a Chicken coop");
+
+                    int buildings = number.nextInt();
+                    switch (buildings) {
+                        case 1:
+
+                            break;
+                        case 2:
+
+                            break;
+                        case 3:
+
+                            break;
+                        case 4:
+
+                            break;
+
+                        default:
+                            System.out.println("Choose number between 1-4");
+                            break;
+                    }
                     break;
                 case 3:
                     System.out.println(" This is your  money" + player.money);
@@ -83,7 +107,7 @@ public class Main {
 
                     break;
                 case 4:
-                    System.out.println(" This is your   money" + player.money);
+                    System.out.println("This is your farm" + player.farmBought);
                     break;
                 case 5:
                     System.out.println("  This is your money" + player.money);
@@ -136,14 +160,15 @@ public class Main {
                     break;
 
                 case 13:
-                    System.out.println(" 13");
-                    break;
-                case 14:
-                    System.out.println("This is your farm" + player.farmBought);
+                    System.out.println(" You end a week");
+                    player.week++;
+                    System.out.print("year " + player.year + "  week  " + player.week);
+
                     break;
 
+
             }
-            System.out.println("Now you need press enter to continue");
+            System.out.println("\n Now you need press enter to continue");
             System.in.read();
             choice = menu();
 

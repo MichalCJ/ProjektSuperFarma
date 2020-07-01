@@ -12,6 +12,7 @@ public abstract class Buildings {
 
     }
 
+
     @Override
     public String toString() {
         return " name: " + this.name + " price: " + this.price;
