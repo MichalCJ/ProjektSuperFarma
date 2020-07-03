@@ -1,9 +1,9 @@
 package FarmObjects;
 
-public abstract class Buildings {
+public class Buildings {
     public String name;
-    public double price;
-    public double capacity;
+    public Double price;
+    public Double capacity;
 
     public Buildings(String name, double price, double capacity) {
         this.name = name;
@@ -13,8 +13,14 @@ public abstract class Buildings {
     }
 
 
+    public Double getPrice() {
+        return price;
+    }
+
     @Override
     public String toString() {
-        return " name: " + this.name + " price: " + this.price;
+        return "  name: " + this.name + "  price:  " + this.price + " capacity: " + this.capacity;
     }
+
+
 }

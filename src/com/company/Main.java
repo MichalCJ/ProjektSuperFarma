@@ -33,8 +33,7 @@ public class Main {
 
         Player player = new Player();
         player.setMyFarms();
-        player.setFarmBought();
-
+        player.setFarmBuildings();
         Buildings silo = new Silo("Silos", 50.00, 100.00);
         Buildings byre = new Byre("Byre", 40.00, 20.0);
         Buildings coop = new ChickenCoop("Chicken copp", 30.00, 15.0);
@@ -75,39 +74,40 @@ public class Main {
                     break;
                 case 2:
                     System.out.println(" This is your money" + player.money);
+
+                    break;
+                case 3:
+                    System.out.println(" This is your  money" + player.money);
                     System.out.print("Here you can buy Buildings");
-                    System.out.println("1. Buy a Byre.");
-                    System.out.println("2. Buy a Silo.");
+                    System.out.println("\n1. Buy a Silo.");
+                    System.out.println("2. Buy a Byre.");
                     System.out.println("3. Buy a Stable.");
                     System.out.println("4. buy a Chicken coop");
 
                     int buildings = number.nextInt();
                     switch (buildings) {
                         case 1:
-
+                            player.buyBuildings(silo, 0);
                             break;
                         case 2:
-
+                            player.buyBuildings(byre, 1);
                             break;
                         case 3:
-
+                            player.buyBuildings(coop, 2);
                             break;
                         case 4:
-
+                            player.buyBuildings(stable, 3);
                             break;
 
                         default:
                             System.out.println("Choose number between 1-4");
                             break;
                     }
-                    break;
-                case 3:
-                    System.out.println(" This is your  money" + player.money);
-
 
                     break;
                 case 4:
                     System.out.println("This is your farm" + player.farmBought);
+                    System.out.println("This is your buildings on farm" + player.farmBuildings);
                     break;
                 case 5:
                     System.out.println("  This is your money" + player.money);
