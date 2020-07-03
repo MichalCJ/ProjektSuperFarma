@@ -34,6 +34,7 @@ public class Main {
         Player player = new Player();
         player.setMyFarms();
         player.setFarmBuildings();
+        player.setMakeAnimals();
         Buildings silo = new Silo("Silos", 50.00, 100.00);
         Buildings byre = new Byre("Byre", 40.00, 20.0);
         Buildings coop = new ChickenCoop("Chicken copp", 30.00, 15.0);
@@ -107,21 +108,34 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("This is your farm" + player.farmBought);
-                    System.out.println("This is your buildings on farm" + player.farmBuildings);
+                    System.out.println("This is your buildings on farm" + player.ownedBuildings);
+                    System.out.println("This is your animals on farm" + player.ownedAnimals);
                     break;
                 case 5:
                     System.out.println("  This is your money" + player.money);
                     System.out.print("Here you can buy new animals to your farm");
-
-//                   int browseAnimals = number.nextInt();
-//                   switch (browseAnimals){
-//                        case 1:
-//                            break;
-//                        case 2:
-//                            break;
-//                        case 3:
-//                            break;
-//                    }
+                    System.out.println("\n1. Buy a cow.");
+                    System.out.println("2. Buy a horse.");
+                    System.out.println("3. Buy a sheep.");
+                    System.out.println("4. buy a chicken ");
+                    int animals = number.nextInt();
+                    switch (animals) {
+                        case 1:
+                            player.buyAnimals(cow, 0);
+                            break;
+                        case 2:
+                            player.buyAnimals(horse, 1);
+                            break;
+                        case 3:
+                            player.buyAnimals(sheep, 2);
+                            break;
+                        case 4:
+                            player.buyAnimals(chicken, 3);
+                            break;
+                        default:
+                            System.out.println("Choose number between 1-4");
+                            break;
+                    }
                     break;
                 case 6:
 

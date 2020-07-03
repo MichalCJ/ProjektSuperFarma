@@ -20,6 +20,15 @@ public class Animals {
         this.typeOfFood = typeOfFood;
     }
 
+    @Override
+    public String toString() {
+        return "  species: " + this.speciesName + " ,  price:  " + this.startPurchaseCost;
+    }
+
+    public Double getPrice() {
+        return startPurchaseCost;
+    }
+
     public void feed() {
 
     }

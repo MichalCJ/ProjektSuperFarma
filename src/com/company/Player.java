@@ -28,6 +28,8 @@ public class Player {
         this.farm = null;
         this.farmBought = new ArrayList<>();
         this.ownedBuildings = new ArrayList<>();
+        this.ownedAnimals = new ArrayList<>();
+        this.ownedPlants = new ArrayList<>();
     }
 
     public void date() {
@@ -63,12 +65,27 @@ public class Player {
         farmBuildings.add(new Stable(" Stable ", 45.00, 20.0));
     }
 
+
+    public void makeAnimals() {
+        farmAnimals.add(new Animals("Cow", 5.0, 3.0, 2.0, 6.0, 6.9, "grass"));
+        farmAnimals.add(new Animals("Horse", 6.0, 3.0, 2.0, 5.0, 6.9, "Hay"));
+        farmAnimals.add(new Animals("Sheep", 3.0, 2.0, 1.5, 4.0, 6.9, "grass"));
+        farmAnimals.add(new Animals("Chicken", 1.0, 1.5, 1.0, 2.0, 6.9, "grain"));
+
+    }
+
     public void setFarmBuildings() {
         this.makeSilo();
         this.makeByre();
         this.makeCoop();
         this.makeStable();
     }
+
+    public void setMakeAnimals() {
+        this.makeAnimals();
+
+    }
+
 
     public void buyFarm(int i) {
         if (money >= myFarms.get(i).priceFarm) {
@@ -90,6 +107,18 @@ public class Player {
             this.money = money - (farmBuildings.get(i).getPrice());
             farmBuildings.add(building);
             System.out.println("you bought a building " + this.ownedBuildings);
+        } else {
+            System.out.println("You don't have money for that try something else");
+        }
+        System.out.println("now you have: " + this.money);
+    }
+
+    public void buyAnimals(Animals animal, int i) {
+        if (money >= farmAnimals.get(i).getPrice()) {
+            this.ownedAnimals.add(farmAnimals.get(i));
+            this.money = money - (farmAnimals.get(i).getPrice());
+            farmAnimals.add(animal);
+            System.out.println("you bought a animal " + this.ownedAnimals);
         } else {
             System.out.println("You don't have money for that try something else");
         }
