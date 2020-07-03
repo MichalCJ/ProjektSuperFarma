@@ -49,19 +49,10 @@ public class Player {
         }
     }
 
-    public void makeSilo() {
+    public void makeBuildings() {
         farmBuildings.add(new Silo(" Silos ", 50.00, 100.00));
-    }
-
-    public void makeByre() {
         farmBuildings.add(new Byre(" Byre ", 40.00, 20.0));
-    }
-
-    public void makeCoop() {
         farmBuildings.add(new ChickenCoop(" Chicken copp ", 30.00, 15.0));
-    }
-
-    public void makeStable() {
         farmBuildings.add(new Stable(" Stable ", 45.00, 20.0));
     }
 
@@ -74,11 +65,17 @@ public class Player {
 
     }
 
+    public void makePlants() {
+        farmPlants.add(new Plants(4.0, "Apple-tree", 5.0, 6.0, 2.0, 3.0, 2.5, 8.0, "Spring"));
+        farmPlants.add(new Plants(2.0, "Wheat", 3.0, 4.0, 3.0, 2.0, 2.0, 5.0, "Spring"));
+        farmPlants.add(new Plants(2.5, "Potatoes", 3.5, 4.5, 4.0, 2.0, 2.0, 6.5, "Spring"));
+
+
+    }
+
     public void setFarmBuildings() {
-        this.makeSilo();
-        this.makeByre();
-        this.makeCoop();
-        this.makeStable();
+        this.makeBuildings();
+
     }
 
     public void setMakeAnimals() {
@@ -86,6 +83,9 @@ public class Player {
 
     }
 
+    public void setMakePlants() {
+        this.makePlants();
+    }
 
     public void buyFarm(int i) {
         if (money >= myFarms.get(i).priceFarm) {
@@ -119,6 +119,18 @@ public class Player {
             this.money = money - (farmAnimals.get(i).getPrice());
             farmAnimals.add(animal);
             System.out.println("you bought a animal " + this.ownedAnimals);
+        } else {
+            System.out.println("You don't have money for that try something else");
+        }
+        System.out.println("now you have: " + this.money);
+    }
+
+    public void buyPlants(Plants plant, int i) {
+        if (money >= farmPlants.get(i).getPrice()) {
+            this.ownedPlants.add(farmPlants.get(i));
+            this.money = money - (farmPlants.get(i).getPrice());
+            farmPlants.add(plant);
+            System.out.println("you bought a plant seed " + this.ownedPlants);
         } else {
             System.out.println("You don't have money for that try something else");
         }

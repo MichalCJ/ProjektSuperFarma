@@ -2,6 +2,7 @@ package com.company;
 
 import FarmObjects.*;
 import ThingsToSell.Animals;
+import ThingsToSell.Plants;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -19,8 +20,8 @@ public class Main {
         System.out.println("8.Harvest plants.");
         System.out.println("9.Sell plants.");
         System.out.println("10.Sell animals .");
-        System.out.println("11.Check how much plants do you have .");
-        System.out.println("12.Check how much animals do you have .");
+        System.out.println("11.Check your plants .");
+        System.out.println("12.Check your animals .");
         System.out.println("13. End this week.");
         Scanner scanMenu = new Scanner(System.in);
 
@@ -35,6 +36,7 @@ public class Main {
         player.setMyFarms();
         player.setFarmBuildings();
         player.setMakeAnimals();
+        player.setMakePlants();
         Buildings silo = new Silo("Silos", 50.00, 100.00);
         Buildings byre = new Byre("Byre", 40.00, 20.0);
         Buildings coop = new ChickenCoop("Chicken copp", 30.00, 15.0);
@@ -45,6 +47,9 @@ public class Main {
         Animals sheep = new Animals("Sheep", 3.0, 2.0, 1.5, 4.0, 6.9, "grass");
         Animals chicken = new Animals("Chicken", 1.0, 1.5, 1.0, 2.0, 6.9, "grain");
 
+        Plants apple = new Plants(4.0, "Apple-tree", 5.0, 6.0, 2.0, 3.0, 2.5, 8.0, "Spring");
+        Plants wheat = new Plants(2.0, "Wheat", 3.0, 4.0, 3.0, 2.0, 2.0, 5.0, "Spring");
+        Plants potatoes = new Plants(2.5, "Potatoes", 3.5, 4.5, 4.0, 2.0, 2.0, 6.5, "Spring");
         System.out.println("Welcome ! Let's star new game.");
 
 
@@ -80,6 +85,7 @@ public class Main {
                 case 3:
                     System.out.println(" This is your  money" + player.money);
                     System.out.print("Here you can buy Buildings");
+                    System.out.println(player.farmBuildings);
                     System.out.println("\n1. Buy a Silo.");
                     System.out.println("2. Buy a Byre.");
                     System.out.println("3. Buy a Stable.");
@@ -114,6 +120,7 @@ public class Main {
                 case 5:
                     System.out.println("  This is your money" + player.money);
                     System.out.print("Here you can buy new animals to your farm");
+                    System.out.println(player.farmAnimals);
                     System.out.println("\n1. Buy a cow.");
                     System.out.println("2. Buy a horse.");
                     System.out.println("3. Buy a sheep.");
@@ -138,10 +145,30 @@ public class Main {
                     }
                     break;
                 case 6:
-
-
-                    System.out.println("   This is your money" + player.money);
+                    System.out.println("  This is your money" + player.money);
+                    System.out.print("Here you can buy new seeds of plants to your farm");
+                    System.out.println(player.farmPlants);
+                    System.out.println("\n1. Buy a apple-tree.");
+                    System.out.println("2. Buy a wheat.");
+                    System.out.println("3. Buy a potatoes.");
+                    int plants = number.nextInt();
+                    switch (plants) {
+                        case 1:
+                            player.buyPlants(apple, 0);
+                            break;
+                        case 2:
+                            player.buyPlants(wheat, 1);
+                            break;
+                        case 3:
+                            player.buyPlants(potatoes, 2);
+                            break;
+                        default:
+                            System.out.println("Choose number between 1-3");
+                            break;
+                    }
                     break;
+
+
                 case 7:
                     System.out.println(" You decided to plant plants, you need to choose which one : ");
 
@@ -189,4 +216,4 @@ public class Main {
         }
 
     }
-}
+    }
